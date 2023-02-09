@@ -9,6 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import utils.CommonUtils;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverFactory {
 	
@@ -17,7 +18,7 @@ public class DriverFactory {
 	public static WebDriver initializeBrowser(String browserName) {
 		
 		if(browserName.equals("chrome")) {
-			
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			
 		}else if(browserName.equals("firefox")) {
